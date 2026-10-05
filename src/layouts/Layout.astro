@@ -1,0 +1,19 @@
+---
+import Header from '../components/Header.astro';
+import "../styles/global.css";
+const { title, showHeader = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <title>{title}</title>
+  </head>
+  <body>
+    {showHeader && <Header />}
+    <main><slot /></main>
+    <footer>© {new Date().getFullYear()} Your Business</footer>
+  </body>
+</html>

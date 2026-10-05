@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contact" showHeader={true}>
+  <h1>Contact</h1>
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
+    <label>Name <input type="text" name="name" required /></label>
+    <label>Email <input type="email" name="email" required /></label>
+    <label>Message <textarea name="message" required></textarea></label>
+    <input type="checkbox" name="botcheck" style="display:none" />
+    <button type="submit">Send</button>
+  </form>
+</Layout>
