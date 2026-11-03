@@ -28,7 +28,6 @@ const isCurrent = (href: string) => {
 
 <header class:list={["site-header", { "site-header--minimal": minimal }]}>
   <a class="site-header__logo" href={base} aria-label="Home">
-    <!-- Replace with <img src={`${base}logo.svg`} alt="Your Business" height="40" /> -->
     <img src={headerLogo.src} alt="Your Business" height="60" />
   </a>
 
@@ -45,8 +44,8 @@ const isCurrent = (href: string) => {
 
   <nav id="main-nav" class="site-header__nav" aria-label="Main">
     <ul>
-      {links.map((link) => (
-        <li>
+      {links.map((link, i) => (
+        <li style={`--i: ${i}`}>
           <a 
             class="site-header__link" 
             href={link.href}

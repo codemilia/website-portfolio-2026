@@ -89,9 +89,9 @@
                 line-height: 30px;
                 width: 100%;
             }
-
             .placeholder-box {
                 margin: 140px auto 0 auto;
+                border: 2px solid #fff;
             }
 
             .placeholder-box p {
