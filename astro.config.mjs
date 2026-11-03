@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://codemilia.github.io",
+  site: "https://emiliaplessing.com",
   base: "/website-portfolio-2026",
 });
