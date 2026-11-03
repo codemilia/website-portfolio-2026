@@ -1,5 +1,9 @@
 ---
 import "../styles/header.css";
+import headerLogo from "../assets/logos/alien-logo-primary-small.svg";
+
+
+const { minimal = false } = Astro.props;
 
 const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -10,12 +14,22 @@ const links = [
   { label: "Portfolio", href: `${base}portfolio` },
   { label: "Kontakt", href: `${base}contact` },
 ];
+
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+
+const isCurrent = (href: string) => {
+  const target = href.replace(/\/$/, '');
+  return currentPath === target;
+};
+
+
 ---
 
-<header class="site-header">
+<header class:list={["site-header", { "site-header--minimal": minimal }]}>
   <a class="site-header__logo" href={base} aria-label="Home">
     <!-- Replace with <img src={`${base}logo.svg`} alt="Your Business" height="40" /> -->
-    Your Logo
+    <img src={headerLogo.src} alt="Your Business" height="60" />
   </a>
 
   <button
@@ -27,14 +41,17 @@ const links = [
   >
     <span class="site-header__bar"></span>
     <span class="site-header__bar"></span>
-    <span class="site-header__bar"></span>
   </button>
 
   <nav id="main-nav" class="site-header__nav" aria-label="Main">
     <ul>
       {links.map((link) => (
         <li>
-          <a class="site-header__link" href={link.href}>
+          <a 
+            class="site-header__link" 
+            href={link.href}
+            aria-current={isCurrent(link.href) ? 'page' : undefined}
+          >
             {link.label}
           </a>
         </li>
@@ -62,5 +79,13 @@ const links = [
   // Close the menu with Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") setOpen(false);
+  });
+
+  // Close the menu when clicking outside of it
+  document.addEventListener("click", (e) => {
+    const target = e.target as Node;
+    if (!nav?.contains(target) && !toggle?.contains(target)) {
+      setOpen(false);
+    }
   });
 </script>

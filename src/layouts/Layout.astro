@@ -1,6 +1,13 @@
 ---
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "@fontsource/ibm-plex-sans/300.css";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/700.css";
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import "../styles/global.css";
+
 const { title, showHeader = false } = Astro.props;
 ---
 <!doctype html>
@@ -12,8 +19,13 @@ const { title, showHeader = false } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    {showHeader && <Header />}
+    <Header minimal={!showHeader} />
     <main><slot /></main>
-    <footer>© {new Date().getFullYear()} Your Business</footer>
+    <Footer />
   </body>
 </html>
+
+
+<script>
+  import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+</script>

@@ -1,0 +1,110 @@
+.portfolio-content {
+    width: 85%;
+    margin: 140px auto 0 auto;
+
+    .project-container {
+        font-size: 20px;
+
+        .project-link a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+        }
+
+        .project-img img {
+            width: 100%;
+            margin: 60px 0 100px 0;
+        }
+
+        .project-statement {
+            font-family: var(--font-sans);
+            line-height: 40px;
+            width: 70%;
+
+            p {
+                margin-bottom: 60px;
+            }
+
+            .statement-quote {
+                position: relative;
+                text-indent: 2.5em;
+            }
+
+            .statement-quote::before {
+                content: "\201C";
+                position: absolute;
+                left: 0;
+                top: -0.1em;
+                font-size: 4em;
+                line-height: 1;
+                text-indent: 0; 
+            }
+        }
+
+        .placeholder-box {
+            position: relative;
+            color: #fff;
+            font-family: var(--font-sans);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            /* width: min(92%, 840px); */
+            margin: 240px auto;
+            aspect-ratio: 732 / 350;
+            border: 3px solid #fff;
+            padding: 1.5rem;
+            text-align: center;
+            width: 100%;
+        }
+    
+        .placeholder-box p {
+            margin: 0;
+            font-size: 20px;
+        }
+        
+        .placeholder-box .stars {
+            position: absolute;
+            top: 8%;
+            right: 4.2%;
+            width: clamp(56px, 13vw, 100px);
+            height: auto;
+            aspect-ratio: 79 / 99;
+        }
+
+    }
+
+    @media (max-width: 768px) {
+        margin: 100px auto 0 auto;
+
+        .project-container {
+            font-size: 16px;
+
+            .project-img img {
+                margin: 40px 0 60px 0;
+            }
+
+            .project-statement {
+                font-family: var(--font-sans);
+                line-height: 30px;
+                width: 100%;
+            }
+
+            .placeholder-box {
+                margin: 140px auto 0 auto;
+            }
+
+            .placeholder-box p {
+                font-size: clamp(12px, 3vw, 16px);;
+            }
+
+            .placeholder-box .stars {
+                top: 6%;
+                right: 6%;
+                width: clamp(30px, 12vw, 44px);
+            }
+        }
+        
+
+    }
+}

@@ -1,14 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/contact.css';
+import ContactPhoto from "../assets/images/contact-photo.png";
 ---
 <Layout title="Contact" showHeader={true}>
-  <h1>Contact</h1>
-  <form action="https://api.web3forms.com/submit" method="POST">
+
+  <div class="contact-content d-flex">
+    <div class="contact-text">
+      <p>
+        Hey! Ich bin Emilia und ich liebe es Technik, Kreativität und Marketing zu vereinen. 
+        Daher macht es mir unglaublichen Spaß Websites zu erstellen, die die Identität einer Marke 
+        zum Ausdruck bringen, sich durch simples und originelles Design von der Konkurrenz abheben 
+        und der Kundin die einfachst mögliche Userjourney bietet.
+      </p>
+      <p>
+        Schreib mich an und wir besprechen Dein Anliegen!
+      </p>
+      <p>
+        emilia.plessing@gmail.com
+      </p>
+    </div>
+    <div class="contact-photo">
+      <img src={ContactPhoto.src} alt="Emilia Plessing" width="400">
+    </div>
+  </div>
+
+  <!-- <form action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
     <label>Name <input type="text" name="name" required /></label>
     <label>Email <input type="email" name="email" required /></label>
     <label>Message <textarea name="message" required></textarea></label>
     <input type="checkbox" name="botcheck" style="display:none" />
     <button type="submit">Send</button>
-  </form>
+  </form> -->
 </Layout>

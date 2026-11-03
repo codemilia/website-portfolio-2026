@@ -1,11 +1,84 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/index.css';
+import AlienLogo from "../assets/logos/alien-logo-solo.svg";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 ---
 
-<Layout title="Home" showHeader={true}>
-  <h1>Welcome</h1>
-  <p>What your business does.</p>
+<Layout title="Home" showHeader={false} id="home-layout">
+  <div id="home">
+    <section 
+        id="head" 
+        class="head d-flex flex-column flex-sm-row justify-content-sm-between justify-content-center align-items-center"
+        aria-labelledby="home-header"
+        >
+        <div class="head-img">
+          <img src={AlienLogo.src} alt="Alien" height="320" >
+        </div>
+        <div class="head-text">
+            <h1>Emilia <br> Plessing</h1>
+            <h2>take up space.</h2>
+        </div>
+      </section>
+
+    <div class="nav-buttons">
+      <a class="button" href={`${base}/contact`}>Kontakt</a>
+      <a class="button" href={`${base}/portfolio`}>Portfolio</a>
+    </div>
+
+    <section id="home-body" class="home-body">
+      <div class="intro-text">
+        <p>
+          Hi, ich bin Emilia und ich realisiere Deine Website. <br>
+          Vom ersten Zündfunken bis zum Launch. <br>
+          Design, Erstellung, Code.
+        </p>
+      </div>
+
+      <div class="service-container">
+        <h2>Design</h2>
+        <p>
+          Ich analysiere dein Business und entwickle davon ausgehend ein 
+          ausgeklügeltes Design. Individuell, kreativ und strategisch. 
+        </p>
+      </div>
+      <div class="service-container">
+        <h2>Erstellung</h2>
+        <p>
+          Das Design setze ich im Webeditor Deiner Wahl, empfohlenerweise 
+          Wordpress um. Du hast vollen Zugriff darauf, sodass du später 
+          jederzeit eigenständig etwas ändern kannst.
+        </p>
+      </div>
+      <div class="service-container">
+        <h2>Codierung</h2>
+        <p>
+          Mit Hilfe von Code kann ich Deine Website Deinen individuellen Ansprüchen 
+          anpassen. Auf Wunsch kann ich deine Website auch rein codieren, ohne 
+          Websiteeditor. Das geht schneller, allerdings kannst du danach nicht 
+          eigenständig Änderungen vornehmen.
+        </p>
+      </div>
+      <div class="service-container">
+        <h2>Live-go</h2>
+        <p>
+          Bei mir bekommst du das volle Paket vom Design bis zum Live-go. Mit 
+          Begriffen wie “Domain” und “Hostingprovider” kannst du nichts anfangen? 
+          Kein Problem, ich mach das für Dich und schule Dich anschließend gerne ein.
+        </p>
+      </div>
+      <div class="service-container">
+        <h2>Visitenkarten & mehr</h2>
+        <p>
+          Cool, jetzt hab ich zwar meine super schöne Website, aber wie bringe 
+          ich meine Kundinnen dort hin? Im Design Deiner Website kann ich dir 
+          gerne Visitenkarten, Flyer, Social Media Posts und anderes Marketingmaterial 
+          erstellen, das Dir hilft den Traffic auf deiner Seite anzukurbeln.
+        </p>
+      </div>
+    </section>
+  </div>
+
 </Layout>

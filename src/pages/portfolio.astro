@@ -1,9 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/portfolio.css';
+import Stars from "../assets/images/portfolio-images/portfolio-stars.svg";
+import TanjaLippPreview from "../assets/images/portfolio-images/Tanja-Lipp-Bsp.svg";
 
 ---
 
-<Layout title="Home" showHeader={true}>
-  <h1>Portfolio</h1>
-  <p>What your business does.</p>
+<Layout title="Portfolio" showHeader={true}>
+  <div class="portfolio-content">
+    <div class="project-container">
+      <div class="project-link">
+        <a href="https://www.praxis-lipp.at/" target="_blank">www.praxis-lipp.at</a>
+      </div>
+      <div class="project-img">
+        <img src={TanjaLippPreview.src} alt="Website Tanka Lipp">
+      </div>
+      <div class="project-statement">
+        <p class="statement-quote">
+          Emilia hat ein tolles Gespür dafür, welches Design zu mir passt, 
+          sie bringt eigene kreative Ideen ein, ist in der Zusammenarbeit verlässlich, 
+          unkompliziert und wertschätzend. Ich bin absolut zufrieden mit dem Ergebnis 
+          meiner Homepage. 100% Weiterempfehlung!
+        </p>
+        <p>
+          - Tanja Lipp
+        </p>
+      </div>
+    </div>
+    <div class="project-container">
+      <div class="placeholder-box">
+        <img class="stars" src={Stars.src} alt="" aria-hidden="true">
+        <p>Hier könnte Deine Homepage sein....</p>
+      </div>
+    </div>
+  </div>
 </Layout>

@@ -1,0 +1,65 @@
+---
+import "../styles/footer.css";
+import instagramIcon from "../assets/icons/instagram.svg?raw";
+import linkedinIcon from "../assets/icons/linkedin.svg?raw";
+import footerLogo from "../assets/logos/alien-logo-primary-small.svg";
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : import.meta.env.BASE_URL + "/";
+
+const links = [
+  { label: "Kontakt", href: `${base}contact` },
+  { label: "Datenschutz & Impressum", href: `${base}legal` },
+];
+
+// Replace the hrefs with your actual profiles.
+const socials = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/your-profile",
+    icon: instagramIcon,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/your-profile",
+    icon: linkedinIcon,
+  },
+];
+---
+
+<footer class="site-footer">
+  <nav class="site-footer__nav" aria-label="Footer">
+    <ul>
+      {links.map((link) => (
+        <li>
+          <a class="site-footer__link" href={link.href}>
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <ul class="site-footer__socials" aria-label="Social media">
+          {socials.map((social) => (
+            <li>
+              <a
+                class="site-footer__social"
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+              >
+                <Fragment set:html={social.icon} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="footer-logo d-flex justify-content-end">
+    <a class="site-header__logo" href={base} aria-label="Home">
+      <img src={footerLogo.src} alt="Your Business" height="90" />
+    </a>
+  </div>
+</footer>

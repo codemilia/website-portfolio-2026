@@ -1,4 +1,22 @@
+:root {
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+
+  --color-primary: #011125;
+  --color-secondary: #fff;
+
+  --hero-inset: 60px;
+}
+
+@media (max-width: 576px) {
+  :root {
+    --hero-inset: 20px;
+  }
+}
+
+
 body {
-    background: pink; /* #011125; */
-    color: #ffff
+    background: #011125;
+    color: #ffff;
+    font-family: var(--font-sans);
 }
