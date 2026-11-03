@@ -15,7 +15,9 @@ const { title, showHeader = false } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="icon" href="/alien-favicon.ico" sizes="32x32" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}alien-favicon.svg`} />
+    <link rel="apple-touch-icon" href="/alien-apple-touch-icon.png" />
     <title>{title}</title>
   </head>
   <body>
